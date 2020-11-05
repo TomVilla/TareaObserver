@@ -9,7 +9,7 @@ import javafx.scene.paint.Color;
 public class Ventana {
 	private Scene scene;
 	private VBox root;
-	final String[] COLORS = {"Black","Yellow","Red"};
+	final String[] COLORS = {"LightGray","Cyan","Pink"};
 	static String colorActual;
 	
 	public Ventana() {
@@ -27,14 +27,14 @@ public class Ventana {
 				cambiarColor();
 			});
 		}
-		contenedor.setSpacing(15);
+		contenedor.setSpacing(25);
 		contenedor.setAlignment(Pos.CENTER);
 		return contenedor;
 	}
 	
 	private VBox crearRoot() {
 		Label titulo = new Label("Botones");
-		titulo.setTextFill(Color.AQUA);
+		titulo.setTextFill(Color.BLACK);
 		HBox botones = crearBotones();
 		VBox vBox = new VBox(titulo,botones);
 		vBox.setSpacing(40);
