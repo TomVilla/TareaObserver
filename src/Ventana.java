@@ -19,6 +19,12 @@ public class Ventana {
 	
 	private HBox crearBotones() {
 		HBox contenedor = new HBox();
+		Button salir=new Button("Salir");
+		salir.setOnMouseClicked(e->{
+			cerrarVentana();
+		}
+		);
+		
 		for(int i = 0; i < COLORS.length; i++) {
 			Button b = new Button(COLORS[i]);
 			contenedor.getChildren().addAll(b);
@@ -27,6 +33,7 @@ public class Ventana {
 				cambiarColor();
 			});
 		}
+		contenedor.getChildren().add(salir);
 		contenedor.setSpacing(25);
 		contenedor.setAlignment(Pos.CENTER);
 		return contenedor;
@@ -40,6 +47,10 @@ public class Ventana {
 		vBox.setSpacing(40);
 		vBox.setAlignment(Pos.CENTER);
 		return vBox;
+	}
+	
+	private void cerrarVentana() {
+		System.exit(0);
 	}
 	
 	private Scene crearEscena() {
